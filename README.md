@@ -109,10 +109,10 @@ export ESPPORT=/dev/tty.SLAB_USBtoUART
 ```
 3. Backup your current firmware. You can do this using [esptool](https://github.com/espressif/esptool):
 ```shell
-pip install esptool
+python -m pip install esptool
 
 # Backup
-esptool.py --port $ESPPORT read_flash 0x00000 0x100000 fwbackup.bin
+python -m esptool --port $ESPPORT read_flash 0x00000 0x100000 fwbackup.bin
 ```  
 
 ### Flash the Sonoff
