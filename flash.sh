@@ -2,10 +2,8 @@
 
 POWERON_STATE="ON" # Change this to "OFF" if you want that your Sonoff will be OFF when powered 
 
-SONOFF_PORT="/dev/cu.wchusbserial14310"
-
-esptool.py \
-            -p $SONOFF_PORT \
+python -m esptool \
+            -p $ESPPORT \
             --baud 115200 \
             write_flash \
             -fs 8m \

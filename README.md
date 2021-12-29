@@ -109,16 +109,18 @@ export ESPPORT=/dev/tty.SLAB_USBtoUART
 ```
 3. Backup your current firmware. You can do this using [esptool](https://github.com/espressif/esptool):
 ```shell
-pip install esptool
+python -m pip install esptool
 
 # Backup
-esptool.py --port $ESPPORT read_flash 0x00000 0x100000 fwbackup.bin
+python -m esptool --port $ESPPORT read_flash 0x00000 0x100000 fwbackup.bin
 ```  
 
 ### Flash the Sonoff
  1) Unplug your sonoff from the power line _(or you can burn your PC)_
- 2) Connect your Sonoff to a serial adapter @ 3.3v
- 3) Run the `flash.sh` script 
+ 2) Connect your Sonoff to a serial adapter @ 3.3v and hold down the button to be able to flash your sonoff
+ 3) Run the `flash.sh` script
+ 4) Unplug sonoff
+ 5) Connect sonoff to the power line again
 
 ### Add Sonoff to Home app
  1) Connect your iPhone or iPad to the new wifi network `Sonoff Switch-xxx`
